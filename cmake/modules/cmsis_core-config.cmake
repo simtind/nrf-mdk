@@ -36,19 +36,21 @@ if (NOT DEFINED CMSIS_DIR)
   
   message(STATUS "No CMSIS_DIR was provided, downloading CMSIS v${CMSIS_VERSION} from github")
   message(STATUS "Set CMSIS_VERSION to select a different version of the CMSIS package")
-    
-  include(FetchContent)
-
-  # declare Catch2
-  FetchContent_Declare(cmsis
-    GIT_REPOSITORY https://github.com/ARM-software/CMSIS_5.git
-    GIT_TAG        ${CMSIS_VERSION}
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
+  
+  # Get CPM
+  file(
+    DOWNLOAD
+    https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.3/CPM.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake
+    EXPECTED_HASH SHA256=cc155ce02e7945e7b8967ddfaff0b050e958a723ef7aad3766d368940cb15494
   )
-
-  # make available
-  FetchContent_MakeAvailable(cmsis)
+  include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
+  
+  CPMAddPackage(
+      NAME cmsis
+      GITHUB_REPOSITORY ARM-software/CMSIS_5
+      GIT_TAG  ${CMSIS_VERSION}
+      DOWNLOAD_ONLY True)
   
   set(CMSIS_DIR ${cmsis_SOURCE_DIR})
 endif()
