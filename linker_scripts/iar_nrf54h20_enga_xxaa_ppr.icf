@@ -1,0 +1,100 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_0.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x1E0E0000;
+/*-Memory Regions-*/
+define symbol __ICFEDIT_region_ROM0_start__   = 0x1E0E0000;
+define symbol __ICFEDIT_region_ROM0_end__     = 0x1E0FFFFF;
+define symbol __ICFEDIT_region_ROM1_start__   = 0x0E0E0000;
+define symbol __ICFEDIT_region_ROM1_end__     = 0x0E0FFFFF;
+define symbol __ICFEDIT_region_ROM2_start__   = 0x3F840000;
+define symbol __ICFEDIT_region_ROM2_end__     = 0x3F843FFF;
+define symbol __ICFEDIT_region_ROM3_start__   = 0x2F840000;
+define symbol __ICFEDIT_region_ROM3_end__     = 0x2F843FFF;
+define symbol __ICFEDIT_region_EXT_ROM_start__   = 0x70000000;
+define symbol __ICFEDIT_region_EXT_ROM_end__     = 0x8FFFFFFF;
+define symbol __ICFEDIT_region_RAM0_start__   = 0x3FC00000;
+define symbol __ICFEDIT_region_RAM0_end__     = 0x3FC03FFF;
+define symbol __ICFEDIT_region_RAM1_start__   = 0x2FC00000;
+define symbol __ICFEDIT_region_RAM1_end__     = 0x2FC03FFF;
+define symbol __ICFEDIT_region_RAM2_start__   = 0x3F000000;
+define symbol __ICFEDIT_region_RAM2_end__     = 0x3F07FFFF;
+define symbol __ICFEDIT_region_RAM3_start__   = 0x2F000000;
+define symbol __ICFEDIT_region_RAM3_end__     = 0x2F07FFFF;
+define symbol __ICFEDIT_region_RAM4_start__   = 0x3F080000;
+define symbol __ICFEDIT_region_RAM4_end__     = 0x3F0DFFFF;
+define symbol __ICFEDIT_region_RAM5_start__   = 0x2F080000;
+define symbol __ICFEDIT_region_RAM5_end__     = 0x2F0DFFFF;
+define symbol __ICFEDIT_region_RAM6_start__   = 0x3FBF0000;
+define symbol __ICFEDIT_region_RAM6_end__     = 0x3FBF7FFF;
+define symbol __ICFEDIT_region_RAM7_start__   = 0x2FBF0000;
+define symbol __ICFEDIT_region_RAM7_end__     = 0x2FBF7FFF;
+define symbol __ICFEDIT_region_RAM8_start__   = 0x3FBF8000;
+define symbol __ICFEDIT_region_RAM8_end__     = 0x3FBFFFFF;
+define symbol __ICFEDIT_region_RAM9_start__   = 0x2FBF8000;
+define symbol __ICFEDIT_region_RAM9_end__     = 0x2FBFFFFF;
+define symbol __ICFEDIT_region_RAM10_start__   = 0x3FC00000;
+define symbol __ICFEDIT_region_RAM10_end__     = 0x3FC03FFF;
+define symbol __ICFEDIT_region_RAM11_start__   = 0x2FC00000;
+define symbol __ICFEDIT_region_RAM11_end__     = 0x2FC03FFF;
+define symbol __ICFEDIT_region_RAM12_start__   = 0x3FC04000;
+define symbol __ICFEDIT_region_RAM12_end__     = 0x3FC07FFF;
+define symbol __ICFEDIT_region_RAM13_start__   = 0x2FC04000;
+define symbol __ICFEDIT_region_RAM13_end__     = 0x2FC07FFF;
+
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__   = 0x800;
+define symbol __ICFEDIT_size_heap__     = 0x800;
+/**** End of ICF editor section. ###ICF###*/
+
+define memory mem with size = 4G;
+define region ROM0_region = mem:[from __ICFEDIT_region_ROM0_start__   to __ICFEDIT_region_ROM0_end__]; /* Inside global MRAM0 (secure) */
+define region ROM1_region = mem:[from __ICFEDIT_region_ROM1_start__   to __ICFEDIT_region_ROM1_end__]; /* Inside global MRAM0 (non-secure) */
+define region ROM2_region = mem:[from __ICFEDIT_region_ROM2_start__   to __ICFEDIT_region_ROM2_end__]; /* OTP0 (secure) */
+define region ROM3_region = mem:[from __ICFEDIT_region_ROM3_start__   to __ICFEDIT_region_ROM3_end__]; /* OTP0 (non-secure) */
+define region EXT_ROM_region = mem:[from __ICFEDIT_region_EXT_ROM_start__   to __ICFEDIT_region_EXT_ROM_end__];
+define region RAM0_region = mem:[from __ICFEDIT_region_RAM0_start__   to __ICFEDIT_region_RAM0_end__]; /* All of GRAM30 (secure) */
+define region RAM1_region = mem:[from __ICFEDIT_region_RAM1_start__   to __ICFEDIT_region_RAM1_end__]; /* All of GRAM30 (non-secure) */
+define region RAM2_region = mem:[from __ICFEDIT_region_RAM2_start__   to __ICFEDIT_region_RAM2_end__]; /* GRAM00 (secure) */
+define region RAM3_region = mem:[from __ICFEDIT_region_RAM3_start__   to __ICFEDIT_region_RAM3_end__]; /* GRAM00 (non-secure) */
+define region RAM4_region = mem:[from __ICFEDIT_region_RAM4_start__   to __ICFEDIT_region_RAM4_end__]; /* GRAM01 (secure) */
+define region RAM5_region = mem:[from __ICFEDIT_region_RAM5_start__   to __ICFEDIT_region_RAM5_end__]; /* GRAM01 (non-secure) */
+define region RAM6_region = mem:[from __ICFEDIT_region_RAM6_start__   to __ICFEDIT_region_RAM6_end__]; /* GRAM20 (secure) */
+define region RAM7_region = mem:[from __ICFEDIT_region_RAM7_start__   to __ICFEDIT_region_RAM7_end__]; /* GRAM20 (non-secure) */
+define region RAM8_region = mem:[from __ICFEDIT_region_RAM8_start__   to __ICFEDIT_region_RAM8_end__]; /* GRAM21 (secure) */
+define region RAM9_region = mem:[from __ICFEDIT_region_RAM9_start__   to __ICFEDIT_region_RAM9_end__]; /* GRAM21 (non-secure) */
+define region RAM10_region = mem:[from __ICFEDIT_region_RAM10_start__   to __ICFEDIT_region_RAM10_end__]; /* GRAM30 (low-speed) (secure) */
+define region RAM11_region = mem:[from __ICFEDIT_region_RAM11_start__   to __ICFEDIT_region_RAM11_end__]; /* GRAM30 (low-speed) (non-secure) */
+define region RAM12_region = mem:[from __ICFEDIT_region_RAM12_start__   to __ICFEDIT_region_RAM12_end__]; /* GRAM31 (low-speed) (secure) */
+define region RAM13_region = mem:[from __ICFEDIT_region_RAM13_start__   to __ICFEDIT_region_RAM13_end__]; /* GRAM31 (low-speed) (non-secure) */
+
+
+if (isdefinedsymbol(__STARTUP_CONFIG)) {
+
+    /* CSTACK and HEAP sections defined in startup file. */
+    keep { section CSTACK };
+    keep { section HEAP };
+
+    initialize by copy { readwrite };
+    do not initialize  { section .noinit };
+    do not initialize  { section CSTACK };
+    do not initialize  { section HEAP };
+
+    place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
+    place in ROM0_region   { readonly };
+    place in RAM0_region   { readwrite, readwrite section CSTACK, readwrite section HEAP };
+
+} else {
+
+    define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+    define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
+
+    initialize by copy { readwrite };
+    do not initialize  { section .noinit };
+
+    place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
+    place in ROM0_region   { readonly };
+    place in RAM0_region   { readwrite, block CSTACK, block HEAP };
+
+}
