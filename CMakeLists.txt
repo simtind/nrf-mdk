@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(nrfx C CXX ASM)
+project(nrf-mdk C CXX ASM)
 
 find_package(MDK REQUIRED HINTS cmake/modules)
 
