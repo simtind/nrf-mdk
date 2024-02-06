@@ -183,10 +183,10 @@ __STATIC_FORCEINLINE void GNUInitializeMemories()
 #endif
 
 /* Implement newlib _exit method stub. */
-__WEAK _exit(int status)
+__WEAK int _exit(int status)
 {
     (void) status;
-    while(true)
+    while(1)
     {
         __BKPT();
     }
@@ -256,8 +256,10 @@ __RESET_HANDLER_ATTRIBUTE void Reset_Handler(void)
  *---------------------------------------------------------------------------*/
 void Default_Handler(void)
 {
-    while (1)
-        ;
+    while(1)
+    {
+        __BKPT();
+    }
 }
 
 #ifdef INITIALIZE_USER_SECTIONS
