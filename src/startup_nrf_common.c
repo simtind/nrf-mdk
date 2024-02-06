@@ -182,6 +182,16 @@ __STATIC_FORCEINLINE void GNUInitializeMemories()
     }
 #endif
 
+/* Implement newlib _exit method stub. */
+__WEAK _exit(int status)
+{
+    (void) status;
+    while(true)
+    {
+        __BKPT();
+    }
+}
+
 
 /*---------------------------------------------------------------------------
   Reset Handler called on controller reset
